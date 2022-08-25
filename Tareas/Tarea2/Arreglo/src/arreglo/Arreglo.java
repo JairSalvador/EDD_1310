@@ -1,14 +1,16 @@
 //Salvador Arrieta Jair Argel 1310
 package arreglo;
+import java.util.ArrayList;
 
 public class Arreglo {
     int tamanio;
     private int longitud;
     private String valor;
     private int indice;
+    ArrayList<String> Arr = new ArrayList<>();
 
     public Arreglo(int tamanio) {
-        
+        this.tamanio = tamanio;
     }
 
     public int getLongitud() {
@@ -18,14 +20,18 @@ public class Arreglo {
     public void setElemento(int indice,String valor) {
         this.indice = indice;
         this.valor = valor;
+        Arr.add(indice,valor);
     }
 
     public int getElemento(int indice) {
         return indice;
     }
     
-    public void limpiar (String Valor){
-        
+    public void limpiar (String valor){
+        Arr.clear();
+        for (int i = 0; i < Arr.size(); i++) {
+            Arr.add(valor);
+        }
     }
 
     @Override
