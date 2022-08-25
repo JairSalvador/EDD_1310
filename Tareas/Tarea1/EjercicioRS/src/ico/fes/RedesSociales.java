@@ -15,7 +15,7 @@ public class RedesSociales {
         int cont = 0;
         int seguidoresE = 0;
         int seguidoresJ = 0;
-        File archivo = new File("C:\\Users\\calav\\Documents\\EDD_1310\\presenciaredes.csv");
+        File archivo = new File("C:\\Users\\calav\\Documents\\EDD_1310\\Tareas\\Tarea1\\EjercicioRS\\src\\ico\\fes\\presenciaredes.csv");
         FileReader archivoLector;
 
         System.out.println("-----TABLA DE REDES SOCIALES-----");
