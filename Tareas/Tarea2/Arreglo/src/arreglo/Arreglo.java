@@ -2,41 +2,44 @@
 package arreglo;
 import java.util.ArrayList;
 
-public class Arreglo {
+public class Arreglo<T>{
     int tamanio;
-    private int longitud;
-    private String valor;
-    private int indice;
-    ArrayList<String> Arr = new ArrayList<>();
+    ArrayList<T> datos;
 
-    public Arreglo(int tamanio) {
-        this.tamanio = tamanio;
+    public Arreglo(int tam) {
+        this.tamanio = tam;
+        datos = new ArrayList();
+        for (int i = 0; i < this.tamanio; i++) {
+            datos.add(null);
+        }
+        
     }
 
-    public int getLongitud() {
-        return longitud;
+    public T getElemento(int indice) throws IndexOutOfBoundsException {
+        return datos.get(indice);
     }
 
-    public void setElemento(int indice,String valor) {
-        this.indice = indice;
-        this.valor = valor;
-        Arr.add(indice,valor);
+    public void setElemento(int indice,T dato) throws IndexOutOfBoundsException{
+       this.datos.set(indice, dato);
     }
 
-    public int getElemento(int indice) {
-        return indice;
+    public int getTamanio() {
+        return tamanio;
     }
     
-    public void limpiar (String valor){
-        Arr.clear();
-        for (int i = 0; i < Arr.size(); i++) {
-            Arr.add(valor);
+    public void limpiar(T dato){
+        for (int i = 0; i < datos.size(); i++) {
+            datos.set(i, dato);
         }
     }
 
     @Override
     public String toString() {
-        return "Arreglo{" + "tamanio=" + tamanio + ", longitud=" + longitud + ", valor=" + valor + ", indice=" + indice + '}';
+        String estado = "";
+        for (T dato : datos) {
+            if(dato != null)
+            estado += dato.toString() +"\n";
+        }
+        return estado;
     }
-    
 }
