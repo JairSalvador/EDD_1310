@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Arreglo<T> extends Empleado{
     int tamanio;
     ArrayList<T> datos;
+    
 
     public Arreglo(int tam) {
         this.tamanio = tam;
